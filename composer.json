@@ -76,6 +76,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+            
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "chmod -R 777 public/",
+            "chmod -R 777 storage/",
+            "chmod -R 777 bootstrap/"
         ],
         "clear-all": [
             "@php artisan clear-compiled",
